@@ -1,0 +1,48 @@
+<section class="container" id="landing">
+    <div class="row justify-content-center mx-0">
+        <div class="col-lg-6 glass-panel p-4">
+            <h2 class="text-center mb-4 fw-bold text-white" style="text-shadow: 0 0 10px rgba(255,255,255,0.5);">بەخێربێیت بۆ یاری وێنەکێشان</h2>
+            
+            <div class="form-floating mb-4">
+                <input type="text" class="form-control text-white" id="playerName" placeholder="ناو" required style="background: rgba(0,0,0,0.2) !important;">
+                <label for="playerName" class="text-white-50">ناوەکەت لێرە بنووسە</label>
+            </div>
+            
+            <div class="row justify-content-center mx-0 align-items-center">
+                <div class="col-6 col-sm-5 text-center">
+                    <img id="avatar" class="img-fluid rounded-circle mb-4 mb-sm-0"
+                        src="https://api.dicebear.com/7.x/pixel-art/svg?seed=avatar" alt="Avatar" style="border: 3px solid #00f2fe; box-shadow: 0 0 15px rgba(0,242,254,0.5);">
+                </div>
+                
+                <div class="col-sm-7">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="style">شێواز</label>
+                        <select class="form-select" id="style">
+                            <option value="مۆدێرن" selected>مۆدێرن</option>
+                            <option value="ڕۆبۆت">ڕۆبۆت</option>
+                            <option value="کچانە">کچانە</option>
+                            <option value="پێکسڵ">پێکسڵ</option>
+                            <option value="مرۆڤ">مرۆڤ</option>
+                            <option value="شێوە">شێوە</option>
+                            <option value="پیت">پیت</option>
+                            <option value="هێما">هێما</option>
+                            <option value="کوڕانە">کوڕانە</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="bgColor">ڕەنگی پاشبنەما</label>
+                        <input type="color" class="form-control form-control-color" id="bgColor" value="#FFFFFF"
+                            title="ڕەنگێک هەڵبژێرە">
+                    </div>
+                </div>
+                
+                <% if(!roomID) { %>
+                    <button class="btn btn-primary mt-4 py-2 fs-5" id="createRoom">دروستکردنی ژووری تایبەت</button>
+                <% } else { %>
+                    <button class="btn btn-primary mt-4 py-2 fs-5" id="playGame">چوونە ژوورەوە</button>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,32 @@
+<% const colorClasses=["white", "grey1" , "red1" , "orange1" , "yellow1" , "green1" , "skyblue1" , "blue1" , "purple1"
+    , "pink1" , "brown1" , "black" , "grey2" , "red2" , "orange2" , "yellow2" , "green2" , "skyblue2" , "blue2"
+    , "purple2" , "pink2" , "brown2" ] %>
+
+<div class="row mx-0 d-none glass-panel p-2" id="tools" style="border-radius: 16px;">
+    <div class="col-2 col-xl-1 px-0 d-flex justify-content-center align-items-center">
+        <div class="selected-color"></div>
+    </div>
+    <div class="col-10 text-end text-xl-start col-xl-6 px-1">
+        <div class="d-inline-flex align-top w-100 flex-wrap">
+            <% for(let i=0; i < 11; i++) { %>
+                <div class="color <%= colorClasses[i] %>" role="button"></div>
+            <% } %>
+        </div>
+        <div class="d-inline-flex w-100 flex-wrap">
+            <% for(let i=11; i < 22; i++) { %>
+                <div class="color <%= colorClasses[i] %>" role="button"></div>
+            <% } %>
+        </div>
+    </div>
+    <div class="col-12 col-xl-5 text-center text-xl-end px-0 d-flex justify-content-evenly align-items-center mt-2 mt-xl-0 bg-white" style="border-radius: 12px; padding: 5px;">
+        <img src="/images/brush-sm.png" id="sm-brush" data-linesize="5" role="button" alt="small brush" class="img-fluid" style="height: 30px; transition: transform 0.2s;">
+        <img src="/images/brush-md.png" id="md-brush" data-linesize="10" role="button" alt="medium brush" class="img-fluid" style="height: 35px; transition: transform 0.2s;">
+        <img src="/images/brush-lg.png" id="lg-brush" data-linesize="15" role="button" alt="large brush" class="img-fluid" style="height: 40px; transition: transform 0.2s;">
+        <img src="/images/brush-xl.png" id="xl-brush" data-linesize="20" role="button" alt="extra large brush" class="img-fluid" style="height: 45px; transition: transform 0.2s;">
+        <img src="/images/delete.png" id="clearCanvas" role="button" alt="clear canvas" class="img-fluid ms-2" style="height: 40px; transition: transform 0.2s; filter: drop-shadow(0 0 5px rgba(255,0,0,0.5));">
+    </div>
+</div>
+
+<style>
+    #tools img:hover { transform: scale(1.1); cursor: pointer; }
+</style>
