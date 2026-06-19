@@ -1,7 +1,18 @@
-<section class="container d-none" id="gameEnded">
-    <div class="row justify-content-center mx-0">
-        <div class="col-lg-8 col-xl-6 bg-white rounded p-3 pt-0" id="statsDiv">
-            <h1 class="text-center display-5 py-5 fw-bold bg-white sticky-top">Final Scores</h1>
+<div id="game-result-screen" class="glass-game-end animate__animated animate__fadeIn" style="display: none;">
+    <div class="glass-card">
+        <div class="trophy-icon">🏆</div>
+        <h2 class="result-title">کۆتایی یارییەکە</h2>
+        
+        <div id="winner-message" class="winner-box"></div>
+        <div id="leaderboard-results" class="leaderboard-box"></div>
+        
+        <div class="result-actions-container">
+            <button id="restart-game-btn" class="action-btn restart-btn">
+                <span class="btn-icon">🔄</span> دووبارەکردنەوەی یاری
+            </button>
+            <button id="leave-room-btn" class="action-btn leave-btn">
+                <span class="btn-icon">🚪</span> چوونە دەرەوە
+            </button>
         </div>
     </div>
-</section>
+</div>
