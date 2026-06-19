@@ -214,76 +214,111 @@ div.players div.row:nth-of-type(2n+1) {
     font-weight: bold;
 }
 
-/* 👑 ستایلی شوشەیی نوێ و مۆدێرن بۆ پانێڵی ئەنجامەکان (Final Scores) */
-#gameEnded {
+/* 👑 پۆشینی فەرمی بۆ شاشەی ئەنجامی کلاود (Glassmorphism Game End) */
+#game-result-screen {
     position: fixed !important;
     top: 50% !important;
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
-    width: 90% !important;
-    max-width: 460px !important;
-    z-index: 2000 !important;
+    width: 95% !important;
+    max-width: 480px !important;
+    z-index: 2500 !important;
     box-sizing: border-box !important;
-    
-    /* افێکت شوشەیی مۆدێرن */
-    background: rgba(255, 255, 255, 0.06) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    border-radius: 24px !important;
-    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5) !important;
-    padding: 25px !important;
-    color: #ffffff !important;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.07) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 28px !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
+    padding: 30px !important;
     text-align: center !important;
 }
 
-/* ڕێکخستنی سەردێڕ و دەقەکانی ئەنجامەکان */
-#gameEnded h1, #gameEnded h2, #gameEnded .title {
-    color: #ffca28 !important; /* ڕەنگی زێڕی گەشاوە */
-    font-size: 1.8rem !important;
-    font-weight: bold !important;
-    text-shadow: 0 0 12px rgba(255, 202, 40, 0.4) !important;
-    margin-bottom: 20px !important;
-    background: none !important;
+.trophy-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: pulse 2s infinite;
 }
 
-/* ڕێکخستنی کارتەکانی ناو خشتەی نمرەکان */
-#gameEnded .player-score-row, #gameEnded li, #gameEnded div[id*="score"] {
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 14px !important;
-    padding: 12px 20px !important;
-    margin-bottom: 10px !important;
+.result-title {
+    color: #ffca28 !important;
+    font-size: 1.9rem !important;
+    font-weight: 700 !important;
+    text-shadow: 0 0 15px rgba(255, 202, 40, 0.5) !important;
+    margin-bottom: 25px !important;
+}
+
+/* خشتەی ڕیزبەندی ناو شاشەی کۆتایی */
+.winner-box, .leaderboard-box {
+    margin-bottom: 15px;
+}
+
+.leaderboard-box div, .winner-box div {
+    background: rgba(255, 255, 255, 0.09) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 16px !important;
+    padding: 14px 20px !important;
+    margin-bottom: 12px !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    transition: all 0.3s ease !important;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-/* 🔘 ستایلکردنی دوگمەکانی دووبارەکردنەوە و دەرچوون */
-#restartGameBtn {
-    background: linear-gradient(135deg, #28a745, #218838) !important;
+.leaderboard-box div:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    transform: scale(1.02);
+}
+
+/* 🔘 دیزاینی لۆقەیی نوێ بۆ دوگمەکان (Liquid Neon Buttons) */
+.result-actions-container {
+    display: flex !important;
+    gap: 15px !important;
+    justify-content: center !important;
+    margin-top: 25px !important;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 14px 22px !important;
     border: none !important;
-    border-radius: 12px !important;
-    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3) !important;
-    color: white !important;
+    border-radius: 16px !important;
     font-weight: bold !important;
-    transition: 0.2s ease !important;
+    font-size: 1rem !important;
+    color: #ffffff !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
 
-#exitGameBtn {
-    background: linear-gradient(135deg, #dc3545, #c82333) !important;
-    border: none !important;
-    border-radius: 12px !important;
-    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3) !important;
-    color: white !important;
-    font-weight: bold !important;
-    transition: 0.2s ease !important;
+.restart-btn {
+    background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%) !important;
+    box-shadow: 0 0 15px rgba(0, 180, 219, 0.4) !important;
 }
 
-#restartGameBtn:hover, #exitGameBtn:hover {
-    transform: translateY(-2px) !important;
-    filter: brightness(1.15) !important;
+.leave-btn {
+    background: linear-gradient(135deg, #ed4264 0%, #ffedbc 100%) !important;
+    color: #000 !important;
+    box-shadow: 0 0 15px rgba(237, 66, 100, 0.3) !important;
+}
+
+.action-btn:hover {
+    transform: translateY(-4px) scale(1.03) !important;
+}
+
+.restart-btn:hover {
+    box-shadow: 0 0 25px rgba(0, 180, 219, 0.8) !important;
+}
+
+.leave-btn:hover {
+    box-shadow: 0 0 25px rgba(237, 66, 100, 0.7) !important;
 }
 
 /* 📱 بەشی ڕێکخستنی شاشەی مۆبایل و تابلێت */
@@ -329,10 +364,15 @@ div.players div.row:nth-of-type(2n+1) {
 
     .mb-3, .my-3 { margin-bottom: 8px !important; }
     .mt-3, .my-3 { margin-top: 8px !important; }
+    
+    .result-actions-container {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
 }
 
-/* ڕێگری لە شینبوونی دەق لە کاتی داگرتن لە مۆبایل */
-#gameEnded, #gameEnded *, .players, .glass-panel, body {
+/* ڕێگری لە شینبوونی دەق */
+#game-result-screen, #game-result-screen *, .players, .glass-panel, body {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -340,10 +380,15 @@ div.players div.row:nth-of-type(2n+1) {
     -webkit-touch-callout: none;
 }
 
-/* هێشتنەوەی توانای نووسین لە ئینپوتەکان */
 input, textarea {
     -webkit-user-select: text !important;
     -moz-user-select: text !important;
     -ms-user-select: text !important;
     user-select: text !important;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
